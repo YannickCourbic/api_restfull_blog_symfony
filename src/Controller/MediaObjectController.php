@@ -27,7 +27,7 @@ class MediaObjectController extends AbstractController
     }
 
     #[Route('/create', name: 'app_create_media_object', methods:['POST'])]
-    public function create(Request $request, SessionInterface $session): JsonResponse
+    public function create(Request $request): JsonResponse
     {   
         $index = (int)$request->request->get('index');
         $chunkSize = (int) $request->request->get('chunkSize');

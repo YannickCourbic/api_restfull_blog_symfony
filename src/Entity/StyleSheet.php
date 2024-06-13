@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\StyleSheetRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Attribute\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: StyleSheetRepository::class)]
@@ -13,6 +14,7 @@ class StyleSheet
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['style_read'])]
     private ?int $id = null;
    
   
@@ -23,6 +25,7 @@ class StyleSheet
         message: "la propriété {{ label }} est invalide, veuillez mettre une valeur valide."
     )]
     #[Assert\NotBlank(message:"la propriété {{ label }} ne peut être vide.")]
+    #[Groups(['style_read'])]
     private ?string $fontFamily = null;
 
     #[ORM\Column(length: 255)]
@@ -32,6 +35,7 @@ class StyleSheet
         message: "la propriété {{ label }} est invalide, veuillez mettre une valeur valide."
     )]
     #[Assert\NotBlank(message: "la propriété {{ label }} ne peut être vide.")]
+    #[Groups(['style_read'])]
     private ?string $fontSize = null;
 
     #[ORM\Column(length: 255)]
@@ -41,6 +45,7 @@ class StyleSheet
         match: false
     )]
     #[Assert\NotBlank(message: "la propriété {{ label }} ne peut être vide.")]
+    #[Groups(['style_read'])]
     private ?string $color = null;
 
     #[ORM\Column(length: 255)]
@@ -50,6 +55,7 @@ class StyleSheet
         message: "la propriété {{ label }} est invalide, veuillez mettre une valeur valide."
     )]
     #[Assert\NotBlank(message: "la propriété {{ label }} ne peut être vide.")]
+    #[Groups(['style_read'])]
     private ?string $background = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -59,6 +65,7 @@ class StyleSheet
         message: "la propriété {{ label }} est invalide, veuillez mettre une valeur valide."
     )]
     #[Assert\NotBlank(message: "la propriété {{ label }} ne peut être vide.")]
+    #[Groups(['style_read'])]
     private ?string $backgroundImage = null;
 
     #[ORM\Column(length: 255)]
@@ -68,6 +75,7 @@ class StyleSheet
         message: "la propriété {{ label }} est invalide, veuillez mettre une valeur valide."    
     )]
     #[Assert\NotBlank(message: "la propriété {{ label }} ne peut être vide.")]
+    #[Groups(['style_read'])]
     private ?string $border = null;
 
     #[ORM\Column(length: 255)]
@@ -77,6 +85,7 @@ class StyleSheet
         message: "la propriété {{ label }} est invalide, veuillez mettre une valeur valide."    
     )]
     #[Assert\NotBlank(message: "la propriété {{ label }} ne peut être vide.")]
+    #[Groups(['style_read'])]
     private ?string $borderRadius = null;
 
     #[ORM\Column(length: 255)]
@@ -86,6 +95,7 @@ class StyleSheet
         message: "la propriété {{ label }} est invalide, veuillez mettre une valeur valide."    
     )]
     #[Assert\NotBlank(message: "la propriété {{ label }} ne peut être vide.")]
+    #[Groups(['style_read'])]
     private ?string $lineHeight = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -95,6 +105,7 @@ class StyleSheet
         message: "la propriété {{ label }} est invalide, veuillez mettre une valeur valide."    
     )]
     #[Assert\NotBlank(message: "la propriété {{ label }} ne peut être vide.")]
+    #[Groups(['style_read'])]
     private ?string $letterSpacing = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -104,6 +115,7 @@ class StyleSheet
         message: "la propriété {{ label }} est invalide, veuillez mettre une valeur valide."    
     )]
     #[Assert\NotBlank(message: "la propriété {{ label }} ne peut être vide.")]
+    #[Groups(['style_read'])]
     private ?string $shadow = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -113,6 +125,7 @@ class StyleSheet
         message: "la propriété {{ label }} est invalide, veuillez mettre une valeur valide."    
     )]
     #[Assert\NotBlank(message: "la propriété {{ label }} ne peut être vide.")]
+    #[Groups(['style_read'])]
     private ?string $backgroundGradient = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -122,6 +135,7 @@ class StyleSheet
         message: "la propriété {{ label }} est invalide, veuillez mettre une valeur valide."    
     )]
     #[Assert\NotBlank(message: "la propriété {{ label }} ne peut être vide.")]
+    #[Groups(['style_read'])]
     private ?string $height = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -131,6 +145,7 @@ class StyleSheet
         message: "la propriété {{ label }} est invalide, veuillez mettre une valeur valide."    
     )]
     #[Assert\NotBlank(message: "la propriété {{ label }} ne peut être vide.")]
+    #[Groups(['style_read'])]
     private ?string $width = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -140,6 +155,7 @@ class StyleSheet
         message: "la propriété {{ label }} est invalide, veuillez mettre une valeur valide."    
     )]
     #[Assert\NotBlank(message: "la propriété {{ label }} ne peut être vide.")]
+    #[Groups(['style_read'])]
     private ?string $positionType = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -149,6 +165,7 @@ class StyleSheet
         message: "la propriété {{ label }} est invalide, veuillez mettre une valeur valide."    
     )]
     #[Assert\NotBlank(message: "la propriété {{ label }} ne peut être vide.")]
+    #[Groups(['style_read'])]
     private ?string $positionTop = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -158,6 +175,7 @@ class StyleSheet
         message: "la propriété {{ label }} est invalide, veuillez mettre une valeur valide."    
     )]
     #[Assert\NotBlank(message: "la propriété {{ label }} ne peut être vide.")]
+    #[Groups(['style_read'])]
     private ?string $positionBottom = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -167,6 +185,7 @@ class StyleSheet
         message: "la propriété {{ label }} est invalide, veuillez mettre une valeur valide."    
     )]
     #[Assert\NotBlank(message: "la propriété {{ label }} ne peut être vide.")]
+    #[Groups(['style_read'])]
     private ?string $positionLeft = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -176,6 +195,7 @@ class StyleSheet
         message: "la propriété {{ label }} est invalide, veuillez mettre une valeur valide."    
     )]
     #[Assert\NotBlank(message: "la propriété {{ label }} ne peut être vide.")]
+    #[Groups(['style_read'])]
     private ?string $positionRight = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -185,6 +205,7 @@ class StyleSheet
         message: "la propriété {{ label }} est invalide, veuillez mettre une valeur valide."    
     )]
     #[Assert\NotBlank(message: "la propriété {{ label }} ne peut être vide.")]
+    #[Groups(['style_read'])]
     private ?string $marginTop = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -194,6 +215,7 @@ class StyleSheet
         message: "la propriété {{ label }} est invalide, veuillez mettre une valeur valide."    
     )]
     #[Assert\NotBlank(message: "la propriété {{ label }} ne peut être vide.")]
+    #[Groups(['style_read'])]
     private ?string $marginBottom = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -203,6 +225,7 @@ class StyleSheet
         message: "la propriété {{ label }} est invalide, veuillez mettre une valeur valide."    
     )]
     #[Assert\NotBlank(message: "la propriété {{ label }} ne peut être vide.")]
+    #[Groups(['style_read'])]
     private ?string $marginLeft = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -212,6 +235,7 @@ class StyleSheet
         message: "la propriété {{ label }} est invalide, veuillez mettre une valeur valide."    
     )]
     #[Assert\NotBlank(message: "la propriété {{ label }} ne peut être vide.")]
+    #[Groups(['style_read'])]
     private ?string $marginRight = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -221,6 +245,7 @@ class StyleSheet
         message: "la propriété {{ label }} est invalide, veuillez mettre une valeur valide."    
     )]
     #[Assert\NotBlank(message: "la propriété {{ label }} ne peut être vide.")]
+    #[Groups(['style_read'])]
     private ?string $paddingTop = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -230,6 +255,7 @@ class StyleSheet
         message: "la propriété {{ label }} est invalide, veuillez mettre une valeur valide."    
     )]
     #[Assert\NotBlank(message: "la propriété {{ label }} ne peut être vide.")]
+    #[Groups(['style_read'])]
     private ?string $paddingBottom = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -239,6 +265,7 @@ class StyleSheet
         message: "la propriété {{ label }} est invalide, veuillez mettre une valeur valide."    
     )]
     #[Assert\NotBlank(message: "la propriété {{ label }} ne peut être vide.")]
+    #[Groups(['style_read'])]
     private ?string $paddingLeft = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -248,6 +275,7 @@ class StyleSheet
         message: "la propriété {{ label }} est invalide, veuillez mettre une valeur valide."    
     )]
     #[Assert\NotBlank(message: "la propriété {{ label }} ne peut être vide.")]
+    #[Groups(['style_read'])]
     private ?string $paddingRight = null;
 
    
